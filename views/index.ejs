@@ -1,0 +1,131 @@
+<html>
+
+<head>
+    <title> ToDo List </title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+</head>
+<style>* {
+    /* font-family: "lato", sans-serif; */
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    
+}
+
+body {
+   
+    background-image: url("https://png.pngtree.com/background/20220718/original/pngtree-plant-colorful-line-aesthetic-art-background-illustration-picture-image_1661911.jpg");
+    color: #333333;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.header{
+    margin-top: 5%;
+    margin-bottom: 2%;
+    
+}
+
+h1{
+    text-align: center;
+    color: rgba(15, 0, 0);
+    margin-top: 6%;
+    margin-bottom: 2%;
+    border-radius: 10%;
+    margin-left: 14%;
+    width: 70%;
+  }
+  
+.container {
+    text-align: center;
+    display: block;
+    width: 30%;
+    margin-top: 7px;
+    margin-left: 9%;
+    float: left;
+    height:350px;
+}
+
+.newtask{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 60%;    
+    color: rgb(9, 7, 0);
+    margin-top: 10%;
+    font-size: 195%;
+}
+.newinput{    
+    width: 200px;
+}
+.btn{
+    background-color: rgb(230, 45, 131);
+    margin-right:140px;
+    margin-top:20px;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+.list-item-task{
+    color: rgb(0, 0, 10);   
+    font-size: 110%;
+   
+}
+.list-item-task{
+    color: rgb(1, 1, 9);   
+    font-size: 110%;
+    
+}
+.container1{
+    text-align: center;
+    display: block;
+    width: 30%;
+    margin-top: 10px;
+    margin-left: 15%;
+    float: left;
+    height:350px;
+    color:black;
+    
+}
+#top{
+    background-color:rgb(230, 45, 131) ;
+}
+
+</style>
+
+<body>
+    
+        <div class="header">
+            <h1> To Do List</h1>
+        </div>
+        <div class="container">
+            <form action="/addtask" method="POST">
+                <br>
+                <label class="newtask"><b> Tasks </b></label> <br> <br>
+                <input class="newinput" type="text" name="newtask" placeholder="add a task">
+                <button class="btn"> Add </button>
+                
+         </div>   
+           <div class="container1">
+                <h1> Remove Task </h1>
+
+                <% for( var i=0; i < task?.length; i++){ %>
+                    <li class="list-item-task"><input type="checkbox" name="check" value="<%= task[i] %>" />  <%= task[i] %>  </li>
+                <% } %>
+                <br>
+                    <button formaction="/removetask" type="submit" id="top" > Remove </button>
+            </form>
+        </div>
+        <!-- <div class="contain">
+            <h2> Completed task </h2>
+            <% for(var i=0; i < complete?.length; i++){ %>
+                <li class="list-item" style="text-align:left; margin-left:15%;margin-bottom:2%;"> <%= complete[i] %> </li>
+                <% } %>-->
+
+        </div>
+    
+
+</body>
+
+</html>
